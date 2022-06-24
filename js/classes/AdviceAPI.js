@@ -5,26 +5,37 @@ export default class AdviseAPI {
   async getAdviceById(id) {
     try {
       const response = await fetch(`${this.url}/${id}`);
-      const advices = await response.json();
-      return advices.slip;
-    } catch (e) {
-      throw new Error(e);
+      if (response.status >= 200 && response.status < 300) {
+        return response.json();
+      } else {
+        throw new Error('Something went wrong.');
+      }
+    } catch (err) {
+      throw new Error(err);
     }
   }
   async getRandomAdvice() {
     try {
       const response = await fetch(this.url);
-      return response.json();
-    } catch (e) {
-      throw new Error(e);
+      if (response.status >= 200 && response.status < 300) {
+        return response.json();
+      } else {
+        throw new Error('Something went wrong.');
+      }
+    } catch (err) {
+      throw new Error(err);
     }
   }
   async getAdvicesBySelect(selectValue) {
     try {
       const response = await fetch(`${this.url}/search/${selectValue}`);
-      return response.json();
-    } catch (e) {
-      throw new Error(e);
+      if (response.status >= 200 && response.status < 300) {
+        return response.json();
+      } else {
+        throw new Error('Something went wrong.');
+      }
+    } catch (err) {
+      throw new Error(err);
     }
   }
 }

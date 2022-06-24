@@ -37,14 +37,24 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    padding: 0 30px;
+    margin: 20px;
 }
 .search {
     display: flex;
     align-items: center;
     gap: 5px;
-}
-.search__label {
     font-size: 19px;
+}
+.search__label,
+.search__input,
+.search__select {
+    font-size: 19px;
+}
+.search__input {
+    max-width: 70px;
+    padding: 5px 0;
+    text-align: center;
 }
 .btn {
     margin: 0 10px;
@@ -59,8 +69,15 @@ body {
     background: #81559b;
 }
 .list__item {
-    font-size: 20px;
+    font-size: 22px;
     background-color: #e6bdff;
     padding: 10px 20px;
     margin: 5px 0;
+    border-radius: 20px;
+}
+@media (max-width: 1030px) {
+    .container {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
