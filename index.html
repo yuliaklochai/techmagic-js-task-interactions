@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Interactions</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__title">TechMagic Academy. JavaScript Part 2</h1>
+    </header>
+    <main class="main">
+        <section class="advices">
+            <h2 class="advices__title">Advices Generator</h2>
+            <div class="container">
+                <button class="btn random-btn" id="btn_random">Get random advise</button>
+                <div class="advices__search search">
+                    <label class="search__label" for="id">The id of advice</label>
+                    <input type="number" name="id" class="search__input">
+                    <button class="search__id-btn btn">Get advice</button>
+                </div>
+                <div class="advices__search search">
+                    <label class="search__label" for="select">Advices about</label>
+                    <select class="search__select" name="select">
+                        <option value="life">Life</option>
+                        <option value="work">Work</option>
+                        <option value="love">Love</option>
+                        <option value="friend">Friend</option>
+                        <option value="mistakes">Mistakes</option>
+                    </select>
+                    <button class="search__select-btn btn">Get advices</button>
+                </div>
+            </div>
+            <div class="advices__list list">
+            </div>
+        </section>
+    </main>
+    <script src="./js/script.js" type="module"></script>
+</body>
+
+</html>
