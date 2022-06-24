@@ -1,10 +1,10 @@
-import AdviseAPI from './AdviceAPI.js';
+import AdviceAPI from './AdviceAPI.js';
 
 let advicesBlock = document.querySelector('.advices__list');
 
 export default class Advise {
   constructor() {
-    this.API = new AdviseAPI();
+    this._adviceAPI = new AdviceAPI();
     this.errorMessage = 'Something went wrong. Please try again';
   }
 
@@ -16,7 +16,7 @@ export default class Advise {
   }
 
   addAdvicesList(selectValue) {
-    this.API.getAdvicesBySelect(selectValue)
+    this._adviceAPI.getAdvicesBySelect(selectValue)
       .then((response) => {
         let list = document.createElement('ul');
 
@@ -32,7 +32,7 @@ export default class Advise {
   }
 
   addRandomAdvice() {
-    this.API.getRandomAdvice()
+    this._adviceAPI.getRandomAdvice()
       .then((response) => {
         let list = document.createElement('ul');
 
@@ -46,7 +46,7 @@ export default class Advise {
   }
 
   addAdviceById(id) {
-    this.API.getAdviceById(id)
+    this._adviceAPI.getAdviceById(id)
       .then((response) => {
         let list = document.createElement('ul');
 
